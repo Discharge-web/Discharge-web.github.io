@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 1</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+  </head>
+  <body>
+    <form id="film-form">
+      <label for="name">Название:</label><br />
+      <input class="input-text" type="text" id="name" name="name" /><br />
+      <label for="genre">Жанр:</label><br />
+      <input class="input-text" type="text" id="genre" name="genre" /><br />
+      <label for="releaseYear">Год:</label><br />
+      <input class="input-text" type="text" id="releaseYear" name="releaseYear" /><br />
+      <input type="checkbox" id="isWatched" name="isWatched" />
+      <label for="isWatched">Успели посмотреть?</label><br />
+
+      <!-- <input type="submit" value="Submit"> -->
+      <button id="btnClear" class="btn btn--red " type="button">Очистить</button><br />
+      <button id="btnSubmit" class="btn btn--grey" type="submit">Добавить</button>
+    </form>
+    <div class="wrapper">
+      <div class="filtration">
+        <input class="input-text offset-reset" type="text" id="nameFilter" name="nameFilter" placeholder="Название фильма"/><br />
+        <input class="input-text offset-reset" type="text" id="genreFilter" name="genreFilter" placeholder="Жанр"/><br />
+        <input class="input-text offset-reset" type="text" id="releaseYearFilter" name="releaseYearFilter" placeholder="Год релиза"/><br />
+        <select class="input-text offset-reset" id="selectFilter" name="selectFilter">
+          <option value="all" selected>Все</option>
+          <option value="yes">Смотрел</option>
+          <option value="no">Не смотрел</option>
+        </select>
+      </div>
+      <button id="btnDeleteAll" class="btn btn--red" type="button">Удалить всё</button>
+    </div>
+
+    <!-- <button class="btn btn--grey btn--sort" type="button">Сортировать</button> -->
+    <table id="film-table">
+      <thead>
+        <tr>
+          <th>
+            <label for="radio-1">Название</label>&nbsp;
+            <input id="radio-1" class="input-sort" type="radio" name="inputSort" value="name">
+          </th>
+          <th>
+            <label for="radio-2">Жанр</label>&nbsp;
+            <input id="radio-2" class="input-sort" type="radio" name="inputSort" value="genre">
+          </th>
+          <th>
+            <label for="radio-3">Год</label>&nbsp;
+            <input id="radio-3" class="input-sort" type="radio" name="inputSort" value="releaseYear">
+          </th>
+          <th>Успели посмотреть?</th>
+          <th>Действие</th>
+        </tr>
+      </thead>
+      <tbody id="film-tbody">
+        <!-- Rows will be inserted here -->
+      </tbody>
+    </table>
+    <script src="script.js"></script>
+  </body>
+</html>
